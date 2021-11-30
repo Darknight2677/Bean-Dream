@@ -11,7 +11,7 @@ public class EvanMovementScript : MonoBehaviour
 
     public int maxHealth = 3;
     public int health;
-    //public HealthBar healthBar;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -74,10 +74,10 @@ public class EvanMovementScript : MonoBehaviour
             {
                 transform.position = new Vector3(0, 0, 0);
                 rb2.velocity = new Vector2(0, 0);
-                //healthBar.SetHealth(maxHealth);
+                healthBar.SetHealth(maxHealth);
                 health = maxHealth;
             }
-            //healthBar.SetHealth(health);
+            healthBar.SetHealth(health);
         }
 
         if (collision.gameObject.tag == "enemyBullet")
@@ -88,10 +88,10 @@ public class EvanMovementScript : MonoBehaviour
             {
                 transform.position = new Vector3(0, 0, 0);
                 rb2.velocity = new Vector2(0, 0);
-                //healthBar.SetHealth(maxHealth);
+                healthBar.SetHealth(maxHealth);
                 health = maxHealth;
             }
-            //healthBar.SetHealth(health);
+            healthBar.SetHealth(health);
         }
     }
 }
