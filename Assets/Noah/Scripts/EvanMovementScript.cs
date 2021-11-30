@@ -9,6 +9,10 @@ public class EvanMovementScript : MonoBehaviour
     SpriteRenderer sr;
     Animator a;
 
+    public int maxHealth = 3;
+    public int health;
+    //public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,36 @@ public class EvanMovementScript : MonoBehaviour
         if (grounded && Input.GetKeyDown(KeyCode.Space))
         {
             rb2.velocity = new Vector2(rb2.velocity.x, 6);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            health--;
+            //Destroy(collision.gameObject);
+            if (health < 1)
+            {
+                transform.position = new Vector3(0, 0, 0);
+                rb2.velocity = new Vector2(0, 0);
+                //healthBar.SetHealth(maxHealth);
+                health = maxHealth;
+            }
+            //healthBar.SetHealth(health);
+        }
+
+        if (collision.gameObject.tag == "enemyBullet")
+        {
+            health--;
+            Destroy(collision.gameObject);
+            if (health < 1)
+            {
+                transform.position = new Vector3(0, 0, 0);
+                rb2.velocity = new Vector2(0, 0);
+                //healthBar.SetHealth(maxHealth);
+                health = maxHealth;
+            }
+            //healthBar.SetHealth(health);
         }
     }
 }
