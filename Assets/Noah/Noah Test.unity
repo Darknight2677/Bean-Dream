@@ -729,9 +729,6 @@ GameObject:
   - component: {fileID: 733655459}
   - component: {fileID: 733655461}
   - component: {fileID: 733655457}
-  - component: {fileID: 733655463}
-  - component: {fileID: 733655462}
-  - component: {fileID: 733655456}
   - component: {fileID: 733655465}
   - component: {fileID: 733655458}
   m_Layer: 0
@@ -741,19 +738,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &733655456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733655455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c7c715e15535a4b8812eaa86c73446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedCap: 3
 --- !u!61 &733655457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -885,34 +869,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &733655462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733655455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d269f468e5ebcd4f91576cd174d9c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: {fileID: 0}
---- !u!114 &733655463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733655455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b75d201bae54b41a13b3862ee88c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpStrength: 400
-  grounded: 0
-  a: {fileID: 0}
 --- !u!114 &733655465
 MonoBehaviour:
   m_ObjectHideFlags: 0
