@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackScript : MonoBehaviour
+public class PlayerCombat : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,14 +13,15 @@ public class AttackScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //This is for the box collider to flip
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            gameObject.active = true;
+            Attack();
         }
-        if (Input.GetMouseButtonDown(1))
-        {
-            gameObject.active = false;
-        }
+    }
+    void Attack()
+    {
+        //Play an attack animation
+        //Detect enemies in range of attack
+        // Damage them
     }
 }
