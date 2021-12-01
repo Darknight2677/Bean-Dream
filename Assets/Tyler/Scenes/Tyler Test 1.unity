@@ -1514,8 +1514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c7c715e15535a4b8812eaa86c73446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedCap: 3
-  rb2: {fileID: 0}
 --- !u!61 &733655457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1659,10 +1657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d269f468e5ebcd4f91576cd174d9c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  rb2: {fileID: 0}
-  sr: {fileID: 0}
-  a: {fileID: 0}
 --- !u!114 &733655463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,10 +1669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b75d201bae54b41a13b3862ee88c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 400
-  grounded: 0
-  rb2: {fileID: 0}
-  a: {fileID: 0}
 --- !u!114 &733655465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1932,6 +1922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
