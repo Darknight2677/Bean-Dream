@@ -6,7 +6,7 @@ public class EvanMovementScript : MonoBehaviour
 {
     bool grounded = false;
     Rigidbody2D rb2;
-    SpriteRenderer sr;
+    //SpriteRenderer sr;
     Animator a;
 
     public int maxHealth = 3;
@@ -17,26 +17,13 @@ public class EvanMovementScript : MonoBehaviour
     void Start()
     {
         rb2 = gameObject.GetComponent<Rigidbody2D>();
-        sr = gameObject.GetComponent<SpriteRenderer>();
+        //sr = gameObject.GetComponent<SpriteRenderer>();
         a = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizValue = Input.GetAxis("Horizontal");
-
-        rb2.velocity = new Vector2(horizValue * 2, rb2.velocity.y);
-
-        if (horizValue > 0)
-        {
-            sr.flipX = false;
-        }
-
-        if (horizValue < 0)
-        {
-            sr.flipX = true;
-        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
