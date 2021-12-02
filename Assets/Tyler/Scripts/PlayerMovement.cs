@@ -62,11 +62,30 @@ public class PlayerMovement : MonoBehaviour
          AllRaycastHits[1] = GroundHitsLeft;
          AllRaycastHits[2] = GroundHitsRight;
 
-        WallRayPositionLeft = transform.position + new Vecotor3(-RayPositionOffset, .5f, 0);
-        WallRayPositionRight = transform.position + new Vecotor3(RayPositionOffset, .5f, 0);
+        WallRayPositionLeft = transform.position + new Vector3(-RayPositionOffset, .5f, 0);
+        WallRayPositionRight = transform.position + new Vector3(RayPositionOffset, .5f, 0);
 
-        WallHitsLeft = Physics2D.RaycastAll(WallRayPositionLeft, Vector2.left, RayLenght);
+        WallHitsLeft = Physics2D.RaycastAll(WallRayPositionLeft, Vector2.left, RayLength);
+        WallHitsRight = Physics2D.RaycastAll(WallRayPositionLeft, -Vector2.left, RayLength);
 
+        OnWallLeft + RayCheck(WallHitsLeft);
+    }
+
+    private bool RayCheck(RaycastHit2D[] RayHits)
+    {
+        foreach (RaycastHit2D hit in HitList)
+        {
+            if (hit.collider != null)
+            {
+                if (hit.collider.tag != "PlayerCollider")
+                {
+                    return true;
+                }
+            }
+             
+        }
+        
+        return false;
     }
 
 
