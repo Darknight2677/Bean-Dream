@@ -24,6 +24,7 @@ public class EvanMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         //a.SetFloat("yVelocity", rb2.velocity.y);
         //a.SetBool("Grounded", grounded);
 
@@ -46,6 +47,10 @@ public class EvanMovementScript : MonoBehaviour
 
 
 
+=======
+        float horizValue = Input.GetAxis("Horizontal");
+
+>>>>>>> e6ff2fb09f16542661bf432d6dc2af6ac4da0a0b
         rb2.velocity = new Vector2(horizValue * 2, rb2.velocity.y);
 
         if (horizValue > 0)
@@ -58,11 +63,6 @@ public class EvanMovementScript : MonoBehaviour
             sr.flipX = true;
         }
 
-        grounded = Physics2D.BoxCast(transform.position, new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb2.velocity = new Vector2(rb2.velocity.x, 6);
-        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
