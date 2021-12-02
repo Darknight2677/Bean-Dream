@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    SpriteRenderer sr;
     private bool CanJump = true;
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float JumpSpeed;
@@ -21,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit2D[] GroundHitsRight;
 
     RaycastHit2D[][] AllRaycastHits = new RaycastHit2D[3][];
+
+    void Start()
+    {
+        //sr = gameObject.GetComponet<SpriteRenderer>();
+    }
 
     private void Awake()
     {
@@ -76,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
+        //float horizValue = Input.GetAxisRaw("Horizontal");
         if( Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
@@ -96,7 +103,12 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
 
-    
+        //if (horizValue > 0)
+            //sr.flipX = false;
+
+        //if (horizValue < 0)
+            //sr.flipX = true;
+
     }
 }
 //im leaving this here because no one will ever find it
