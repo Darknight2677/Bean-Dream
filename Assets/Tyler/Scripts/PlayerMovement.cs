@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     rb.velocity = new Vector2(rb.velocity.x, -WallSlideSpeed);
                 }
-                else if (Input.Getaxisraw("Horizontal") > 0 && OnWallRight) 
+                else if (Input.GetAxisRaw("Horizontal") > 0 && OnWallRight) 
                 {
                     rb.velocity = new Vector2(rb.velocity.x, -WallSlideSpeed);
                 }
