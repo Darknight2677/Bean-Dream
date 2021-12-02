@@ -23,10 +23,19 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit2D[][] AllRaycastHits = new RaycastHit2D[3][];
 
-    void Start()
-    {
+    private bool OnWallRight;
+    private bool OnWallLeft;
+
+    Vector3 WallRayPositionLeft;
+    Vector3 WallRayPositionRight;
+
+    RaycastHit2D[] WallHitsLeft;
+    RaycastHit2D[] WallHitsRight;
+
+    //void Start()
+    //{
         //sr = gameObject.GetComponet<SpriteRenderer>();
-    }
+    //}
 
     private void Awake()
     {
@@ -39,25 +48,41 @@ public class PlayerMovement : MonoBehaviour
         Jump();
     }
 
+    private void RaySetup()
+    {
+         RayPositionCenter = transform.position + new Vector3(0, RayLength * 1f, 0);
+         RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * 1f, 0);
+         RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * 1f, 0);
+
+         GroundHitsCenter = Physics2D.RaycastAll(RayPositionCenter, -Vector2.up, RayLength);
+         GroundHitsLeft = Physics2D.RaycastAll(RayPositionLeft, -Vector2.up, RayLength);
+         GroundHitsRight = Physics2D.RaycastAll(RayPositionRight, -Vector2.up, RayLength);
+
+         AllRaycastHits[0] = GroundHitsCenter;
+         AllRaycastHits[1] = GroundHitsLeft;
+         AllRaycastHits[2] = GroundHitsRight;
+
+        WallRayPositionLeft = transform.position + new Vecotor3(-RayPositionOffset, .5f, 0);
+        WallRayPositionRight = transform.position + new Vecotor3(RayPositionOffset, .5f, 0);
+
+        WallHitsLeft = Physics2D.RaycastAll(WallRayPositionLeft, Vector2.left, RayLenght);
+
+    }
+
+
     private void Jump()
     {
-        RayPositionCenter = transform.position + new Vector3(0, RayLength * 1f, 0);
-        RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * 1f, 0);
-        RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * 1f, 0);
-
-        GroundHitsCenter = Physics2D.RaycastAll(RayPositionCenter, -Vector2.up, RayLength);
-        GroundHitsLeft = Physics2D.RaycastAll(RayPositionLeft, -Vector2.up, RayLength);
-        GroundHitsRight = Physics2D.RaycastAll(RayPositionRight, -Vector2.up, RayLength);
-
-        AllRaycastHits[0] = GroundHitsCenter;
-        AllRaycastHits[1] = GroundHitsLeft;
-        AllRaycastHits[2] = GroundHitsRight;
+        RaySetup();
 
         CanJump = GroundCheck(AllRaycastHits);
-
-        Debug.DrawRay(RayPositionCenter, -Vector2.up * RayLength, Color.red);
-        Debug.DrawRay(RayPositionLeft, -Vector2.up * RayLength, Color.red);
-        Debug.DrawRay(RayPositionRight, -Vector2.up * RayLength, Color.red);
+        if (Input.GetKey(KeyCode.Space) && CanJump)
+        {
+         rb.velocity = new Vector2(rb.velocity.x, 0);
+         rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+        }
+     Debug.DrawRay(RayPositionCenter, -Vector2.up * RayLength, Color.red);
+     Debug.DrawRay(RayPositionLeft, -Vector2.up * RayLength, Color.red);
+      Debug.DrawRay(RayPositionRight, -Vector2.up * RayLength, Color.red);
     }
 
     private bool GroundCheck(RaycastHit2D[][] GroundHits)
@@ -97,11 +122,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     
-        if (Input.GetKey(KeyCode.Space) && CanJump)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
-        }
+       
 
         //if (horizValue > 0)
             //sr.flipX = false;
