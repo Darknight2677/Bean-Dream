@@ -84,15 +84,16 @@ public class PlayerMovementCopy : MonoBehaviour
     private void Movement()
     {
         //float horizValue = Input.GetAxisRaw("Horizontal");
+        Vector3 local = transform.localScale;
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
-            
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
-            
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
