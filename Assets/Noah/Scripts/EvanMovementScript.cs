@@ -24,25 +24,25 @@ public class EvanMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        a.SetFloat("yVelocity", rb2.velocity.y);
-        a.SetBool("Grounded", grounded);
+        //a.SetFloat("yVelocity", rb2.velocity.y);
+        //a.SetBool("Grounded", grounded);
 
         float horizValue = Input.GetAxis("Horizontal");
 
-        if (horizValue == 0)
-        {
-            a.SetBool("Moving", false);
-        }
+        //if (horizValue == 0)
+        //{
+            //a.SetBool("Moving", false);
+        //}
 
-        if (horizValue > 0)
-        {
-            a.SetBool("Moving", true);
-        }
+        //if (horizValue > 0)
+        //{
+            //a.SetBool("Moving", true);
+        //}
 
-        if (horizValue < 0)
-        {
-            a.SetBool("Moving", true);
-        }
+        //if (horizValue < 0)
+        //{
+            //a.SetBool("Moving", true);
+        //}
 
 
 

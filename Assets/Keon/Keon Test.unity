@@ -303,7 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c7c715e15535a4b8812eaa86c73446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedCap: 3
 --- !u!61 &733655457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -317,18 +316,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004940331, y: 0}
+  m_Offset: {x: 0.06359118, y: 0.6323588}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7435087, y: 1}
+  m_Size: {x: 0.8805717, y: 1.1931343}
   m_EdgeRadius: 0
 --- !u!50 &733655458
 Rigidbody2D:
@@ -390,8 +389,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6447722072507503168, guid: 10f3cacccb0c4c547be76836eba20664,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -426,7 +424,7 @@ Animator:
   m_GameObject: {fileID: 733655455}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8394082429771114a808357c737227a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: b95265f99b6d90e438df1308a89c8bab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -447,7 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d269f468e5ebcd4f91576cd174d9c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 0}
 --- !u!114 &733655463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,9 +457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b75d201bae54b41a13b3862ee88c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpStrength: 400
-  grounded: 0
-  a: {fileID: 0}
 --- !u!114 &733655464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   health: 0
+  healthBar: {fileID: 0}
 --- !u!1 &1665439058
 GameObject:
   m_ObjectHideFlags: 0
