@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public Animator animator;
+
+    public Transform attackPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         //Play an attack animation
+        animator.SetTrigger("Attack")
         //Detect enemies in range of attack
         // Damage them
     }
