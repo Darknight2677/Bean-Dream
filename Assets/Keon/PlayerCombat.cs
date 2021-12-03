@@ -24,7 +24,7 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         //Play an attack animation
-        animator.SetTrigger("Attack")
+        animator.SetTrigger("Attack");
         //Detect enemies in range of attack
         // Damage them
     }
