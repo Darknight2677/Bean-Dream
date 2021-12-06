@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementCopy : MonoBehaviour
 {
     private Rigidbody2D rb;
     SpriteRenderer sr;
@@ -51,17 +51,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void RaySetup()
     {
-         RayPositionCenter = transform.position + new Vector3(0, RayLength * 1f, 0);
-         RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * 1f, 0);
-         RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * 1f, 0);
+        RayPositionCenter = transform.position + new Vector3(0, RayLength * 1f, 0);
+        RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * 1f, 0);
+        RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * 1f, 0);
 
-         GroundHitsCenter = Physics2D.RaycastAll(RayPositionCenter, -Vector2.up, RayLength);
-         GroundHitsLeft = Physics2D.RaycastAll(RayPositionLeft, -Vector2.up, RayLength);
-         GroundHitsRight = Physics2D.RaycastAll(RayPositionRight, -Vector2.up, RayLength);
+        GroundHitsCenter = Physics2D.RaycastAll(RayPositionCenter, -Vector2.up, RayLength);
+        GroundHitsLeft = Physics2D.RaycastAll(RayPositionLeft, -Vector2.up, RayLength);
+        GroundHitsRight = Physics2D.RaycastAll(RayPositionRight, -Vector2.up, RayLength);
 
-         AllRaycastHits[0] = GroundHitsCenter;
-         AllRaycastHits[1] = GroundHitsLeft;
-         AllRaycastHits[2] = GroundHitsRight;
+        AllRaycastHits[0] = GroundHitsCenter;
+        AllRaycastHits[1] = GroundHitsLeft;
+        AllRaycastHits[2] = GroundHitsRight;
 
         WallRayPositionLeft = transform.position + new Vector3(-RayPositionOffset, .5f, 0);
         WallRayPositionRight = transform.position + new Vector3(RayPositionOffset, .5f, 0);
@@ -86,9 +86,9 @@ public class PlayerMovement : MonoBehaviour
                     return true;
                 }
             }
-             
+
         }
-        
+
         return false;
     }
 
@@ -100,8 +100,8 @@ public class PlayerMovement : MonoBehaviour
         CanJump = RayListCheck(AllRaycastHits);
         if (Input.GetKey(KeyCode.Space) && CanJump)
         {
-         rb.velocity = new Vector2(rb.velocity.x, 0);
-         rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.velocity = new Vector2(rb.velocity.x, JumpSpeed);
         }
 
         if (!OnGround)
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     rb.velocity = new Vector2(rb.velocity.x, -WallSlideSpeed);
                 }
-                else if (Input.GetAxisRaw("Horizontal") > 0 && OnWallRight) 
+                else if (Input.GetAxisRaw("Horizontal") > 0 && OnWallRight)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, -WallSlideSpeed);
                 }
@@ -128,11 +128,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if(hit.collider.tag != "PlayerCollider")
+                    if (hit.collider.tag != "PlayerCollider")
                     {
                         return true;
                     }
-                    
+
                 }
             }
         }
@@ -142,14 +142,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        if( Input.GetAxisRaw("Horizontal") > 0)
+        Vector3 local = transform.localScale;
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
-            
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else
         {
@@ -174,95 +176,3 @@ public class PlayerMovement : MonoBehaviour
 
 }
 //im leaving this here because no one will ever find it
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//deez nuts
