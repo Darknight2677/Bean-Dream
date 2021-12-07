@@ -289,6 +289,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
+=======
 --- !u!114 &733655456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dd0cd25bcae25428672673ccef4886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+>>>>>>> 559bae92ce332fd4b08e8799c35ffbb17789500a
 --- !u!61 &733655457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,6 +434,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &733655462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   mainPlayer: {fileID: 733655455}
+>>>>>>> 559bae92ce332fd4b08e8799c35ffbb17789500a
 --- !u!114 &733655464
 MonoBehaviour:
   m_ObjectHideFlags: 0
