@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EnemyAI : MonoBehaviour
 {
+
     //Reference to waypoints
     public List<Transform> points;
     //The int value for the next point index

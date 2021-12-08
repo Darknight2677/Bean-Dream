@@ -8,6 +8,8 @@ public class EvanMovementScript : MonoBehaviour
     Rigidbody2D rb2;
     //SpriteRenderer sr;
     Animator a;
+    public GameObject spawnPoint;
+    public GameObject mainPlayer;
 
     public int maxHealth = 3;
     public int health;
@@ -68,10 +70,11 @@ public class EvanMovementScript : MonoBehaviour
             //Destroy(collision.gameObject);
             if (health < 1)
             {
-                transform.position = new Vector3(0, 0, 0);
-                rb2.velocity = new Vector2(0, 0);
                 healthBar.SetHealth(maxHealth);
                 health = maxHealth;
+                rb2 = mainPlayer.GetComponent<Rigidbody2D>();
+                rb2.velocity = new Vector2(0, 0);
+                mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
             }
             healthBar.SetHealth(health);
         }
@@ -82,10 +85,11 @@ public class EvanMovementScript : MonoBehaviour
             Destroy(collision.gameObject);
             if (health < 1)
             {
-                transform.position = new Vector3(0, 0, 0);
-                rb2.velocity = new Vector2(0, 0);
                 healthBar.SetHealth(maxHealth);
                 health = maxHealth;
+                rb2 = mainPlayer.GetComponent<Rigidbody2D>();
+                rb2.velocity = new Vector2(0, 0);
+                mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
             }
             healthBar.SetHealth(health);
         }

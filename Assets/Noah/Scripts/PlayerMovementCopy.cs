@@ -142,15 +142,19 @@ public class PlayerMovementCopy : MonoBehaviour
 
     private void Movement()
     {
+        //Noah
         Vector3 local = transform.localScale;
+
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
+            //Noah
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
+            //Noah
             transform.localScale = new Vector3(-1, 1, 1);
         }
         else
@@ -170,16 +174,17 @@ public class PlayerMovementCopy : MonoBehaviour
 
     }
 
+
     //public IEnumerator Knockback(float knockDur, float knockbackPwr, Vector3 knockbackDir)
     //{
-        //float timer = 0;
+    //float timer = 0;
 
-        //while( knockDur > timer)
-        //{
-            //timer += Time.deltaTime;
+    //while( knockDur > timer)
+    //{
+    //timer += Time.deltaTime;
 
-            //rb2d.AddForce(new Vector3(knockbackDir.x * -100, knockbackDir.y * knockbackPwr, transform.position.z));
-        //}
+    //rb2d.AddForce(new Vector3(knockbackDir.x * -100, knockbackDir.y * knockbackPwr, transform.position.z));
+    //}
     //}
 
 
