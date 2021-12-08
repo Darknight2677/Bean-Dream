@@ -2061,9 +2061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a535c921844022141baf94cb2d5da17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  mainPlayer: {fileID: 0}
   maxHealth: 3
   health: 0
   healthBar: {fileID: 0}
+  timer: {fileID: 0}
 --- !u!4 &1644126425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
@@ -2303,6 +2306,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: JumpSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: RayLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: MovementSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: WallSlideSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: RayPositionOffset
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
