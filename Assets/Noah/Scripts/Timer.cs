@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     private Rigidbody2D rb2;
 
     public PlayerMovementCopy player;
+    public EvanMovementScript evan;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,15 @@ public class Timer : MonoBehaviour
             rb2 = mainPlayer.GetComponent<Rigidbody2D>();
             rb2.velocity = new Vector2(0, 0);
             mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
+            Restartlevel();
         }
+    }
+
+    public void Restartlevel()
+    {
+        currentTime = maxTime;
+        runningTimer = true;
+        evan.healthBar.SetHealth(evan.maxHealth);
+        evan.health = evan.maxHealth;
     }
 }
