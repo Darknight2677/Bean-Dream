@@ -7,12 +7,12 @@ public class Enemy : MonoBehaviour
     public Animator animator;
 
     public int maxHealth = 100;
-    int
+    public int currentHealth;
     // Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+    void Start()
+    {
+        maxHealth = currentHealth;
+    }
 
     public void TakeDamage(int damage)
     {

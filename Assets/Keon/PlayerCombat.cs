@@ -27,10 +27,10 @@ public class PlayerCombat : MonoBehaviour
     {
         if(Time.time >= nextAttackTime)
         {
-            if (input.GetKeyDown(Keycode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
-                nextAttackTime = nextAttackTime.time + 1f / attackRate;
+                nextAttackTime = Time.time + 1f / attackRate;
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,12 +52,11 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
-}
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
 
-void OnDrawGizmosSelected()
-{
-    if (attackPoint == null)
-        return;
-
-    Gizmos.DrawWireSphere(attack.Point.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 }

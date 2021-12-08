@@ -376,7 +376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733655455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19dd0cd25bcae25428672673ccef4886, type: 3}
   m_Name: 
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733655455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b76609e62629f048b7c014e73a2a3f5, type: 3}
   m_Name: 
@@ -557,10 +557,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   AttackPoint: {fileID: 0}
-  attackRange: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 0
+  attackRange: 0.5
+  attackDamage: 40
+  attackRate: 2
   attackPoint: {fileID: 0}
 --- !u!114 &733655465
 MonoBehaviour:
@@ -569,11 +571,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733655455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a535c921844022141baf94cb2d5da17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  mainPlayer: {fileID: 0}
   maxHealth: 3
   health: 3
   healthBar: {fileID: 0}
