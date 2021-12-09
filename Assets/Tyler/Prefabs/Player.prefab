@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2850d198cc05bed43b9bd89cba9de5cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a310f715a5750394ab74583714c02712, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,7 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03d84e9d7d75cb4b98bdf76cac62970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 175
-  JumpSpeed: 20
-  RayLength: -0.8
-  RayPositionOffset: 0.3
+  MovementSpeed: 200
+  JumpSpeed: 15
+  WallSlideSpeed: 1
+  RayLength: 1
+  RayPositionOffset: -0.3
