@@ -15,6 +15,13 @@ public class EnemyAI : MonoBehaviour
     //Speed of movement or flying
     public float speed = 2;
 
+    SpriteRenderer sr;
+
+    private void Start()
+    {
+        sr.GetComponent<SpriteRenderer>();
+    }
+
     private void Reset()
     {
         Init();
@@ -58,11 +65,11 @@ public class EnemyAI : MonoBehaviour
         Transform goalPoint = points[nextID];
         //Flip the enemy transform to look into the point's direction
         if (goalPoint.transform.position.x > transform.position.x)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
         else
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(0.5f, 0.5f, 1);
         //Move the enemy towards the goal point
-        transform.position = Vector2.MoveTowards(transform.position,goalPoint.position,speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, goalPoint.position, speed * Time.deltaTime);
         //Check the distance between enemy and goal point to trigger next point
         if(Vector2.Distance(transform.position, goalPoint.position)<0.2f)
         {
