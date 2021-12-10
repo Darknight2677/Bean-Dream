@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tyler/Scenes/Credits.unity
+    guid: 0025b3a5d53db2447bcf635acfffd14b
+  - enabled: 1
+    path: Assets/Tyler/Scenes/Tyler Test 1.unity
+    guid: 9e6c180c8fd4f7541b394104afe7eb09
   m_configObjects: {}
