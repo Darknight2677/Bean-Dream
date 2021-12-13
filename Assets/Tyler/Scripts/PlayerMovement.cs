@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         Jump();
-        TimerText.text = timer.currentTime.ToString();
+        //TimerText.text = timer.currentTime.ToString();
     }
 
     private void Movement()
