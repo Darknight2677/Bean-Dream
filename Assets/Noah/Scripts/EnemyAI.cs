@@ -15,11 +15,18 @@ public class EnemyAI : MonoBehaviour
     //Speed of movement or flying
     public float speed = 2;
 
+
+    public Animator animator;
+
+    public int maxHealth = 100;
+    public int currentHealth;
+
     SpriteRenderer sr;
 
     private void Start()
     {
         sr.GetComponent<SpriteRenderer>();
+        maxHealth = currentHealth;
     }
 
     private void Reset()
@@ -83,4 +90,29 @@ public class EnemyAI : MonoBehaviour
             nextID += idChangeValue;
         }
     }
+    
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy died!");
+
+        animator.SetBool("IsDead", true);
+
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
+    }
+
+
 }

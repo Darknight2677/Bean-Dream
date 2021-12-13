@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
     RaycastHit2D[] WallHitsLeft;
     RaycastHit2D[] WallHitsRight;
 
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -80,12 +85,12 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
                 rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
-                transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                transform.localScale = new Vector3(0.7f, 0.7f, 1);
             }
             else if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 rb.velocity = new Vector2(-MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
-                transform.localScale = new Vector3(-0.2f, 0.2f, 1);
+                transform.localScale = new Vector3(-0.7f, 0.7f, 1);
             }
             else
             {
