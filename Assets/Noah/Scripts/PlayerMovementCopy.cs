@@ -37,7 +37,10 @@ public class PlayerMovementCopy : MonoBehaviour
     RaycastHit2D[] WallHitsLeft;
     RaycastHit2D[] WallHitsRight;
 
-
+    //private void Start()
+    //{
+        
+    //}
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
