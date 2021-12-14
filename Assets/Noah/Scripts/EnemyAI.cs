@@ -21,12 +21,12 @@ public class EnemyAI : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    SpriteRenderer sr;
+    //SpriteRenderer sr;
 
     private void Start()
     {
-        sr.GetComponent<SpriteRenderer>();
-        maxHealth = currentHealth;
+        //sr.GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
     }
 
     private void Reset()
@@ -111,7 +111,7 @@ public class EnemyAI : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-
+        GetComponent<Collider2D>().enabled = false;
     }
 
 
