@@ -164,7 +164,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   TimerText: {fileID: 0}
   MovementSpeed: 200
-  JumpSpeed: 15
+  JumpSpeed: 18
   WallSlideSpeed: 1
   RayLength: 1
   RayPositionOffset: -0.3
