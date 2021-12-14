@@ -230,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             health--;
-
+            rb.velocity = new Vector2(-JumpSpeed * 5f, JumpSpeed);
             if (health <= 0)
             {
                 healthBar.SetHealth(maxHealth);
