@@ -265,8 +265,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   timer: {fileID: 0}
   TimerText: {fileID: 0}
-  MovementSpeed: 200
-  JumpSpeed: 20
+  MovementSpeed: 230
+  JumpSpeed: 18
   WallSlideSpeed: 1
   RayLength: 0.6
   RayPositionOffset: -0.2
