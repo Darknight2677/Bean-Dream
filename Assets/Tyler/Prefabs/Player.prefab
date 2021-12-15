@@ -164,10 +164,10 @@ MonoBehaviour:
   timer: {fileID: 0}
   TimerText: {fileID: 0}
   MovementSpeed: 200
-  JumpSpeed: 18
+  JumpSpeed: 20
   WallSlideSpeed: 1
-  RayLength: 1
-  RayPositionOffset: -0.3
+  RayLength: 0.6
+  RayPositionOffset: -0.2
 --- !u!212 &1777849284
 SpriteRenderer:
   m_ObjectHideFlags: 0

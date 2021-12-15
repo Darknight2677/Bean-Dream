@@ -183,10 +183,10 @@ MonoBehaviour:
   timer: {fileID: 862075516}
   TimerText: {fileID: 1338769188}
   MovementSpeed: 200
-  JumpSpeed: 15
+  JumpSpeed: 20
   WallSlideSpeed: 1
-  RayLength: 1
-  RayPositionOffset: -0.3
+  RayLength: 0.6
+  RayPositionOffset: -0.2
 --- !u!4 &331842257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
@@ -330,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 2312732688821244509, guid: dc808c5561ab2ec4a979689c2e630777,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2312732688907436788, guid: dc808c5561ab2ec4a979689c2e630777,
         type: 3}

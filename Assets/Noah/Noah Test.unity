@@ -1733,6 +1733,16 @@ PrefabInstance:
       objectReference: {fileID: 1939115358}
     - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
+      propertyPath: JumpSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: RayLength
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 1807969325}
@@ -1746,6 +1756,11 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1680332926}
+    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
+        type: 3}
+      propertyPath: RayPositionOffset
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
       propertyPath: m_RootOrder
