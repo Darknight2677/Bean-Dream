@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit2D[] WallHitsLeft;
     RaycastHit2D[] WallHitsRight;
-
+    
     private void Start()
     {
         health = maxHealth;

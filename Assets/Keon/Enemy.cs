@@ -10,11 +10,14 @@ public class Enemy : MonoBehaviour
     public int currentHealth;
 
     public EnemyAI AI;
+
+    //Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         AI = GetComponent<EnemyAI>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -29,8 +32,8 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         animator.SetTrigger("Hurt");
-
-        if(currentHealth <= 0)
+        //rb.velocity = new Vector2(-5f, 0);
+        if (currentHealth <= 0)
         {
             Die();
             AI.enabled = false;
