@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningTimer: 0
   currentTime: 0
-  maxTime: 10
+  maxTime: 20
   spawnPoint: {fileID: 1680332926}
   mainPlayer: {fileID: 1777849280}
   player: {fileID: 1777849281}
@@ -1733,16 +1733,6 @@ PrefabInstance:
       objectReference: {fileID: 1939115358}
     - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
-      propertyPath: JumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
-        type: 3}
-      propertyPath: RayLength
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
-        type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 1807969325}
@@ -1756,11 +1746,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1680332926}
-    - target: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
-        type: 3}
-      propertyPath: RayPositionOffset
-      value: -0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
       propertyPath: m_RootOrder

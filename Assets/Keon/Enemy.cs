@@ -8,12 +8,22 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
+
+    public EnemyAI AI;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        AI = GetComponent<EnemyAI>();
     }
 
+    private void Update()
+    {
+        if(currentHealth >= 0)
+        {
+            AI.enabled = true;
+        }
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -23,6 +33,7 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             Die();
+            AI.enabled = false;
         }
     }
 
@@ -32,10 +43,8 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("IsDead", true);
 
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
-
-
 }
