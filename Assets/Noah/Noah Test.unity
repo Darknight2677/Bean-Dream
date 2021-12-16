@@ -1353,18 +1353,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2097854298}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1777849281 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5001575152181301285, guid: 10825eb57256f2e46ad3a3091d12b38d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2097854298}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777849280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03d84e9d7d75cb4b98bdf76cac62970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1777849283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5001575152181301291, guid: 10825eb57256f2e46ad3a3091d12b38d,
@@ -1483,7 +1471,7 @@ MonoBehaviour:
   maxTime: 20
   spawnPoint: {fileID: 1680332926}
   mainPlayer: {fileID: 1777849280}
-  player: {fileID: 1777849281}
+  player: {fileID: 0}
 --- !u!4 &1939115359
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,6 +1709,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 331842254, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1939115358}
+    - target: {fileID: 331842254, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 1807969325}
+    - target: {fileID: 331842254, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 611961951}
+    - target: {fileID: 331842254, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 1680332926}
     - target: {fileID: 5001575152181301284, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
       propertyPath: m_Name
