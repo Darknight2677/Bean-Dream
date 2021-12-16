@@ -18,15 +18,15 @@ public class EnemyAI : MonoBehaviour
 
     public Animator animator;
 
-    public int maxHealth = 100;
-    public int currentHealth;
+    //public int maxHealth = 100;
+    //public int currentHealth;
 
     //SpriteRenderer sr;
 
     private void Start()
     {
         //sr.GetComponent<SpriteRenderer>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     private void Reset()
@@ -91,28 +91,28 @@ public class EnemyAI : MonoBehaviour
         }
     }
     
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
+    //public void TakeDamage(int damage)
+    //{
+        //currentHealth -= damage;
 
-        animator.SetTrigger("Hurt");
+        //animator.SetTrigger("Hurt");
 
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
+        //if (currentHealth <= 0)
+        //{
+            //Die();
+        //}
+    //}
 
-    void Die()
-    {
-        Debug.Log("Enemy died!");
+    //void Die()
+    //{
+        //Debug.Log("Enemy died!");
 
-        animator.SetBool("IsDead", true);
+        //animator.SetBool("IsDead", true);
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-        GetComponent<Collider2D>().enabled = false;
-    }
+        //GetComponent<BoxCollider2D>().enabled = false;
+        //this.enabled = false;
+        //GetComponent<BoxCollider2D>().enabled = false;
+    //}
 
 
 }

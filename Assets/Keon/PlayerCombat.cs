@@ -12,8 +12,8 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public int attackDamage = 40;
 
-    //public float attackRate = 2f;
-    //float nextAttackTime = 0f;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,19 +24,14 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Time.time >= nextAttackTime)
-        //{
+        if(Time.time >= nextAttackTime)
+        {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Attack();
-                //nextAttackTime = Time.time + 1f / attackRate;
+                nextAttackTime = Time.time + 1f / attackRate;
             }
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                animator.SetTrigger("Attack");
-            }
-        //}
+        }
     }
     void Attack()
     {

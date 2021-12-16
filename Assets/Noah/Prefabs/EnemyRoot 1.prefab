@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2312732688821244506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2312732688662281640}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2312732689167484488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.5, y: 0, z: 0}
+  m_LocalPosition: {x: 6.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2312732688662281640}
@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 2312732690610428842}
   - component: {fileID: 2312732689108403609}
   - component: {fileID: 2312732689108403608}
+  - component: {fileID: 1957467500}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
@@ -197,7 +198,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1764213499356046532, guid: 4134967381d4abb4fa5e9cbfb7b9fa13,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -220,7 +221,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.050955415, y: 0.030573845}
@@ -253,6 +254,7 @@ MonoBehaviour:
   - {fileID: 2312732688821244509}
   nextID: 0
   speed: 5
+  animator: {fileID: 2312732689108403608}
 --- !u!61 &2312732689108403609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,7 +265,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.050955415, y: 0.030573845}
@@ -298,3 +300,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1957467500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312732690610428840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80809d527dd112449766d89834f2638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2312732689108403608}
+  maxHealth: 200
+  currentHealth: 0
+  AI: {fileID: 0}

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &134544780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134544781}
+  m_Layer: 9
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134544781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134544780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.96, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5001575152181301291}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775711497
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,9 +127,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5001575152181301291}
   - component: {fileID: 5001575152181301290}
-  - component: {fileID: 5001575152181301285}
   - component: {fileID: 1777849284}
   - component: {fileID: 1777849285}
+  - component: {fileID: 331842254}
+  - component: {fileID: 331842258}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -120,6 +151,7 @@ Transform:
   m_Children:
   - {fileID: 5001575150883486035}
   - {fileID: 775711498}
+  - {fileID: 134544781}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -144,30 +176,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5001575152181301285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001575152181301284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03d84e9d7d75cb4b98bdf76cac62970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  mainPlayer: {fileID: 5001575152181301284}
-  maxHealth: 3
-  health: 0
-  healthBar: {fileID: 0}
-  timer: {fileID: 0}
-  TimerText: {fileID: 0}
-  MovementSpeed: 200
-  JumpSpeed: 18
-  WallSlideSpeed: 1
-  RayLength: 1
-  RayPositionOffset: -0.3
 --- !u!212 &1777849284
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +214,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6433328265533858362, guid: d99f7c5afe34205419c2d9faa4647346,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -238,3 +246,47 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &331842254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001575152181301284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03d84e9d7d75cb4b98bdf76cac62970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  mainPlayer: {fileID: 5001575152181301284}
+  maxHealth: 3
+  health: 0
+  healthBar: {fileID: 0}
+  timer: {fileID: 0}
+  TimerText: {fileID: 0}
+  MovementSpeed: 230
+  JumpSpeed: 18
+  WallSlideSpeed: 1
+  RayLength: 0.6
+  RayPositionOffset: -0.2
+--- !u!114 &331842258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5001575152181301284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b796401b6153df04fb879cd916e67a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1777849285}
+  attackPoint: {fileID: 134544781}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  attackRange: 0.5
+  attackDamage: 40
+  attackRate: 3

@@ -57,10 +57,11 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit2D[] WallHitsLeft;
     RaycastHit2D[] WallHitsRight;
-
+    
     private void Start()
     {
         health = maxHealth;
+        a = gameObject.GetComponent<Animator>();
     }
 
     private void Awake()
@@ -86,15 +87,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
                 transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                a.SetBool("IsWalking", true);
             }
             else if (Input.GetAxisRaw("Horizontal") < 0)
             {
                 rb.velocity = new Vector2(-MovementSpeed * Time.fixedDeltaTime, rb.velocity.y);
                 transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+                a.SetBool("IsWalking", true);
             }
             else
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
+                a.SetBool("IsWalking", false);
             }
         }
     }
@@ -230,7 +234,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             health--;
-            rb.velocity = new Vector2(-JumpSpeed * 5f, JumpSpeed);
+            //rb.velocity = new Vector2(-JumpSpeed * 5f, JumpSpeed);
             if (health <= 0)
             {
                 healthBar.SetHealth(maxHealth);
@@ -257,6 +261,17 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetHealth(health);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "OutOfBounds")
+        {
+            rb2 = mainPlayer.GetComponent<Rigidbody2D>();
+            rb2.velocity = new Vector2(0, 0);
+            mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
+        }
+    }
+}
+
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
@@ -275,7 +290,6 @@ public class PlayerMovement : MonoBehaviour
         //rend.material.color = c;
     //}
     //End of Noah combined script
-}
 
 
 
