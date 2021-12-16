@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         animator.SetTrigger("Hurt");
-        //rb.velocity = new Vector2(-5f, 0);
+        //rb.velocity = new Vector2(0, 0);
         if (currentHealth <= 0)
         {
             Die();

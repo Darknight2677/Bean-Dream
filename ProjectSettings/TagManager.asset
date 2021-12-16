@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemyBullet
   - Enemy
+  - PlayerCollider
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

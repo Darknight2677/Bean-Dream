@@ -268,6 +268,8 @@ public class PlayerMovement : MonoBehaviour
             rb2 = mainPlayer.GetComponent<Rigidbody2D>();
             rb2.velocity = new Vector2(0, 0);
             mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
+            healthBar.SetHealth(maxHealth);
+            health = maxHealth;
         }
     }
 }
