@@ -261,6 +261,17 @@ public class PlayerMovement : MonoBehaviour
             healthBar.SetHealth(health);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "OutOfBounds")
+        {
+            rb2 = mainPlayer.GetComponent<Rigidbody2D>();
+            rb2.velocity = new Vector2(0, 0);
+            mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
+        }
+    }
+}
+
 
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
@@ -279,7 +290,6 @@ public class PlayerMovement : MonoBehaviour
         //rend.material.color = c;
     //}
     //End of Noah combined script
-}
 
 
 
