@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -76,6 +77,10 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         Jump();
         TimerText.text = timer.currentTime.ToString();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenuScene");
+        }
     }
 
     private void Movement()
