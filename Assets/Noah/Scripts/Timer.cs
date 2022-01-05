@@ -42,4 +42,6 @@ public class Timer : MonoBehaviour
         player.healthBar.SetHealth(player.maxHealth);
         player.health = player.maxHealth;
     }
+
+
 }

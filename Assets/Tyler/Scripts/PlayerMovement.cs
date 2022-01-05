@@ -76,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         Jump();
-        TimerText.text = timer.currentTime.ToString();
+        string FText = string.Format("{0:0.0}" , timer.currentTime);
+        TimerText.text = FText;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenuScene");
