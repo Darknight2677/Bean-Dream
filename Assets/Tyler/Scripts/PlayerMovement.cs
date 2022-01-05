@@ -248,6 +248,7 @@ public class PlayerMovement : MonoBehaviour
                 rb2 = mainPlayer.GetComponent<Rigidbody2D>();
                 rb2.velocity = new Vector2(0, 0);
                 mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
+                GetComponent<BoxCollider2D>().enabled = false;
             }
             healthBar.SetHealth(health);
         }
@@ -256,6 +257,9 @@ public class PlayerMovement : MonoBehaviour
         {
             health--;
             Destroy(collision.gameObject);
+            //GetComponent<BoxCollider2D>().enabled = false;
+            //yield return new WaitForSeconds(2);
+            //GetComponent<BoxCollider2D>().enabled = true;
             if (health <= 0)
             {
                 healthBar.SetHealth(maxHealth);
