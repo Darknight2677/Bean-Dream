@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreditRoller : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class CreditRoller : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Toggle
             int currentScene = swapCount % nScreens;
@@ -49,9 +50,8 @@ public class CreditRoller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene("MainMenuScene");
         }
-
 
     } ////Update
 
