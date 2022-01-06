@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerColliders : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerColliders : MonoBehaviour
                 rb2.velocity = new Vector2(0, 0);
                 p.mainPlayer.transform.localPosition = p.spawnPoint.transform.localPosition;
                 GetComponent<BoxCollider2D>().enabled = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             p.healthBar.SetHealth(p.health);
             GetComponent<BoxCollider2D>().enabled = false;
@@ -39,6 +41,7 @@ public class PlayerColliders : MonoBehaviour
                 rb2 = p.mainPlayer.GetComponent<Rigidbody2D>();
                 rb2.velocity = new Vector2(0, 0);
                 p.mainPlayer.transform.localPosition = p.spawnPoint.transform.localPosition;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             p.healthBar.SetHealth(p.health);
             GetComponent<BoxCollider2D>().enabled = false;
@@ -55,6 +58,7 @@ public class PlayerColliders : MonoBehaviour
             p.mainPlayer.transform.localPosition = p.spawnPoint.transform.localPosition;
             p.healthBar.SetHealth(p.maxHealth);
             p.health = p.maxHealth;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

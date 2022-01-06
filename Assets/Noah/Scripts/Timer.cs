@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class Timer : MonoBehaviour
         runningTimer = true;
         player.healthBar.SetHealth(player.maxHealth);
         player.health = player.maxHealth;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
