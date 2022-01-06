@@ -45,6 +45,8 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died!");
 
         animator.SetBool("IsDead", true);
+        //animator["BeanEnemy.Death"].wrapMode = WrapMode.Once;
+        //animator.Play("BeanEnemy.Death");
 
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
