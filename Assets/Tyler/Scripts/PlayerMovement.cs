@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit2D[] WallHitsLeft;
     RaycastHit2D[] WallHitsRight;
-    
+
     private void Start()
     {
         health = maxHealth;
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Movement();
         Jump();
-        string FText = string.Format("{0:0.0}" , timer.currentTime);
+        string FText = string.Format("{0:0.0}", timer.currentTime);
         TimerText.text = FText;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -234,55 +234,10 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(WallRayPositionRight, -Vector2.left * RayLength, Color.blue);
     }
 
-    //Noah combined script
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health--;
-            //rb.velocity = new Vector2(-JumpSpeed * 5f, JumpSpeed);
-            if (health <= 0)
-            {
-                healthBar.SetHealth(maxHealth);
-                health = maxHealth;
-                rb2 = mainPlayer.GetComponent<Rigidbody2D>();
-                rb2.velocity = new Vector2(0, 0);
-                mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
-                GetComponent<BoxCollider2D>().enabled = false;
-            }
-            healthBar.SetHealth(health);
-        }
-
-        if (collision.gameObject.tag == "enemyBullet")
-        {
-            health--;
-            Destroy(collision.gameObject);
-            //GetComponent<BoxCollider2D>().enabled = false;
-            //yield return new WaitForSeconds(2);
-            //GetComponent<BoxCollider2D>().enabled = true;
-            if (health <= 0)
-            {
-                healthBar.SetHealth(maxHealth);
-                health = maxHealth;
-                rb2 = mainPlayer.GetComponent<Rigidbody2D>();
-                rb2.velocity = new Vector2(0, 0);
-                mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
-            }
-            healthBar.SetHealth(health);
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "OutOfBounds")
-        {
-            rb2 = mainPlayer.GetComponent<Rigidbody2D>();
-            rb2.velocity = new Vector2(0, 0);
-            mainPlayer.transform.localPosition = spawnPoint.transform.localPosition;
-            healthBar.SetHealth(maxHealth);
-            health = maxHealth;
-        }
-    }
+   
 }
+
+    //Noah combined script
 
 
     //private void OnTriggerEnter2D(Collider2D collision)
