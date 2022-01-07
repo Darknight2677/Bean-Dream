@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - PlayerCollider
   - OutOfBounds
+  - RedBeanCan
+  - BrownBeanCan
   layers:
   - Default
   - TransparentFX

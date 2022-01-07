@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //rend = GetComponent<Renderer>();
         //c = rend.material.color;
+        rb2 = gameObject.GetComponent<Rigidbody2D>();
+        a = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -82,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenuScene");
         }
+        a.SetFloat("yVelocity", rb2.velocity.y);
+        a.SetBool("Grounded", OnGround);
     }
 
     private void Movement()

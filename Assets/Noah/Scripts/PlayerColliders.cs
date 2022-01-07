@@ -7,6 +7,7 @@ public class PlayerColliders : MonoBehaviour
 {
     Rigidbody2D rb2;
     public PlayerMovement p;
+    public Timer t;
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,6 +48,19 @@ public class PlayerColliders : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
             yield return new WaitForSeconds(1f);
             GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        if (collision.gameObject.tag == "RedBeanCan")
+        {
+            p.health = p.maxHealth;
+            p.healthBar.SetHealth(p.maxHealth);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "BrownBeanCan")
+        {
+            t.currentTime += 5;
+            Destroy(collision.gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
