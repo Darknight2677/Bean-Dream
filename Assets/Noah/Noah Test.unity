@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runningTimer: 0
   currentTime: 0
-  maxTime: 20
+  maxTime: 5
   spawnPoint: {fileID: 1680332926}
   mainPlayer: {fileID: 1777849280}
   player: {fileID: 1777849282}
