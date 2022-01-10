@@ -45,9 +45,9 @@ public class PlayerColliders : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             p.healthBar.SetHealth(p.health);
-            GetComponent<BoxCollider2D>().enabled = false;
-            yield return new WaitForSeconds(1f);
-            GetComponent<BoxCollider2D>().enabled = true;
+            //GetComponent<BoxCollider2D>().enabled = false;
+            //yield return new WaitForSeconds(1f);
+            //GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (collision.gameObject.tag == "RedBeanCan")
