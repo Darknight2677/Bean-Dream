@@ -8,7 +8,7 @@ public class PlayerColliders : MonoBehaviour
     Rigidbody2D rb2;
     public PlayerMovement p;
     public Timer t;
-    public float AddedTime;
+    public float AddedTime = 5;
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
