@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private bool CanMove = true;
     private bool CanJump;
     private bool OnGround;
+    private bool OnWall;
 
     //Noah combined script
-    bool grounded = false;
     Rigidbody2D rb2;
     Animator a;
     public GameObject spawnPoint;
@@ -86,6 +86,20 @@ public class PlayerMovement : MonoBehaviour
         }
         a.SetFloat("yVelocity", rb2.velocity.y);
         a.SetBool("Grounded", OnGround);
+        if(OnWallLeft)
+        {
+            a.SetBool("OnWall", true);
+            transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        }
+        if(OnWallRight)
+        {
+            a.SetBool("OnWall", true);
+            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+        }
+        if(OnGround)
+        {
+            a.SetBool("OnWall", false);
+        }
     }
 
     private void Movement()

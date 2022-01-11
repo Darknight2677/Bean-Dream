@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5606549528730375683}
   - component: {fileID: 2796708863718624059}
-  - component: {fileID: 7235641549834326183}
+  - component: {fileID: 826677663}
   m_Layer: 0
   m_Name: RedBeanCan
   m_TagString: RedBeanCan
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7239025034274701695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2, y: -2.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c57f2fac2da605b4c9503c862e06fa26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa48669c78d84448b229d781f791117, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7235641549834326183
+--- !u!61 &826677663
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028364778, y: 0.26946485}
+  m_Offset: {x: 0.0054676235, y: 0.06647059}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,5 +106,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59727836, y: 0.687989}
+  m_Size: {x: 0.93560237, y: 1.2293081}
   m_EdgeRadius: 0
