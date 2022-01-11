@@ -14,7 +14,8 @@ public class Brick : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		Debug.Log(col.gameObject.name);
+		
+		Debug.Log("===========================" + col.gameObject.name);
 		if (col.gameObject.name.Equals ("Player")) {
 			Invoke ("DropPlatform", 0.5f);
 			Destroy (gameObject, 2f);
