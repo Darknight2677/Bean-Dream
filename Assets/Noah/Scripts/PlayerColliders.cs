@@ -8,6 +8,7 @@ public class PlayerColliders : MonoBehaviour
     Rigidbody2D rb2;
     public PlayerMovement p;
     public Timer t;
+    public float AddedTime;
 
     IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
@@ -59,7 +60,7 @@ public class PlayerColliders : MonoBehaviour
 
         if (collision.gameObject.tag == "BrownBeanCan")
         {
-            t.currentTime += 5;
+            t.currentTime += AddedTime;
             Destroy(collision.gameObject);
         }
     }

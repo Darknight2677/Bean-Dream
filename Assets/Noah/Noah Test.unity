@@ -1737,10 +1737,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1680332926}
-    - target: {fileID: 331842258, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
-      propertyPath: attackRange
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1766601983, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
       propertyPath: t
       value: 
