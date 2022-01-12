@@ -23,13 +23,9 @@ public class PlayerColliders : MonoBehaviour
                 rb2 = p.mainPlayer.GetComponent<Rigidbody2D>();
                 rb2.velocity = new Vector2(0, 0);
                 p.mainPlayer.transform.localPosition = p.spawnPoint.transform.localPosition;
-                GetComponent<BoxCollider2D>().enabled = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             p.healthBar.SetHealth(p.health);
-            GetComponent<BoxCollider2D>().enabled = false;
-            yield return new WaitForSeconds(1f);
-            GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (collision.gameObject.tag == "enemyBullet")
