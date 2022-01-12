@@ -19133,10 +19133,6 @@ PrefabInstance:
       propertyPath: t
       value: 
       objectReference: {fileID: 833091683}
-    - target: {fileID: 1766601983, guid: 10825eb57256f2e46ad3a3091d12b38d, type: 3}
-      propertyPath: AddedTime
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5001575152181301284, guid: 10825eb57256f2e46ad3a3091d12b38d,
         type: 3}
       propertyPath: m_Name
