@@ -10,7 +10,7 @@ public class PlayerColliders : MonoBehaviour
     public Timer t;
     public float AddedTime = 5;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -26,6 +26,9 @@ public class PlayerColliders : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             p.healthBar.SetHealth(p.health);
+            GetComponent<BoxCollider2D>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            GetComponent<BoxCollider2D>().enabled = true;
         }
 
         if (collision.gameObject.tag == "enemyBullet")
