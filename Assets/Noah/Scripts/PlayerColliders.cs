@@ -10,7 +10,7 @@ public class PlayerColliders : MonoBehaviour
     public Timer t;
     public float AddedTime = 5;
 
-    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
