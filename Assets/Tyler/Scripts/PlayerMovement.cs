@@ -86,24 +86,20 @@ public class PlayerMovement : MonoBehaviour
         }
         a.SetFloat("yVelocity", rb2.velocity.y);
         a.SetBool("Grounded", OnGround);
-        //if(OnWallLeft = true)
-        //{
-        //    a.SetBool("OnWall", true);
-        //    transform.localScale = new Vector3(0.5f, 0.5f, 1);
-        //}
-        //if(OnWallRight = true)
-        //{
-        //    a.SetBool("OnWall", true);
-        //    transform.localScale = new Vector3(-0.5f, 0.5f, 1);
-        //}
-        //if (OnWallLeft = false)
-        //{
-        //    a.SetBool("OnWall", false);
-        //}
-        //if (OnWallRight = false)
-        //{
-        //    a.SetBool("OnWall", false);
-        //}
+        if(OnWallLeft == true)
+        {
+            a.SetBool("OnWall", true);
+            transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        }
+        if(OnWallRight == true)
+        {
+            a.SetBool("OnWall", true);
+            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+        }
+        if (OnWallLeft==false && OnWallRight == false)
+        {
+            a.SetBool("OnWall", false);
+        }
     }
 
     private void Movement()
