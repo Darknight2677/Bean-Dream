@@ -80,10 +80,10 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         string FText = string.Format("{0:0.0}", timer.currentTime);
         TimerText.text = FText;
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenuScene");
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    SceneManager.LoadScene("MainMenuScene");
+        //}
         a.SetFloat("yVelocity", rb2.velocity.y);
         a.SetBool("Grounded", OnGround);
         if(OnWallLeft == true)
