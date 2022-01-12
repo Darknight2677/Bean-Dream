@@ -13,13 +13,13 @@ public class SceneChange2 : MonoBehaviour
     //SceneManager.LoadScene("MainMenuScene");
     //}
     //}
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+        if (collision.gameObject.name == "Player")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
+        }
     }
-
-
 }
 
 
