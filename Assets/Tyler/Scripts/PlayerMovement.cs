@@ -89,12 +89,10 @@ public class PlayerMovement : MonoBehaviour
         if(OnWallLeft == true)
         {
             a.SetBool("OnWall", true);
-            transform.localScale = new Vector3(0.5f, 0.5f, 1);
         }
         if(OnWallRight == true)
         {
             a.SetBool("OnWall", true);
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
         }
         if (OnWallLeft==false && OnWallRight == false)
         {
@@ -203,12 +201,14 @@ public class PlayerMovement : MonoBehaviour
             //Wall Jump
             if (Input.GetKeyDown(KeyCode.Space) && OnWallLeft)
             {
+                transform.localScale = new Vector3(0.5f, 0.5f, 1);
                 rb.velocity = new Vector2(JumpSpeed * 0.5f, JumpSpeed);
                 StartCoroutine(WallJumpCoolDown());
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && OnWallRight)
             {
+                transform.localScale = new Vector3(-0.5f, 0.5f, 1);
                 rb.velocity = new Vector2(-JumpSpeed * 0.5f, JumpSpeed);
                 StartCoroutine(WallJumpCoolDown());
             }
