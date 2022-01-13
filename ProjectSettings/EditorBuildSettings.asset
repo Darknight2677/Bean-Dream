@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Brenden/Scenes/Actual Level 2.unity
     guid: 42749d1a95db7f54d907f101e8feda49
+  - enabled: 1
+    path: Assets/Brenden/Scenes/Tutorial.unity
+    guid: befdcac913cdc1340bbdb2a6c45505fd
   m_configObjects: {}
