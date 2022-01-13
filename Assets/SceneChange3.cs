@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChange2 : MonoBehaviour
+public class SceneChange3 : MonoBehaviour
 {
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
@@ -17,7 +17,7 @@ public class SceneChange2 : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
         }
     }
 }

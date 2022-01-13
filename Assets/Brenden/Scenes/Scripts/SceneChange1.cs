@@ -17,7 +17,7 @@ public class SceneChange1 : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
         }
     }
 
