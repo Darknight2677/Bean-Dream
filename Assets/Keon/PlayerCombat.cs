@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    public float attackLength;
 
     // Start is called before the first frame update
     void Start()
