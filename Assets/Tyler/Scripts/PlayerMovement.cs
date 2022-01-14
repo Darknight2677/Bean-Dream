@@ -98,6 +98,10 @@ public class PlayerMovement : MonoBehaviour
         {
             a.SetBool("OnWall", false);
         }
+        if (Input.GetKeyDown(KeyCode.End))
+        {
+            SceneManager.LoadScene("Actual Level 2");
+        }
     }
 
     private void Movement()
