@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurretScript : MonoBehaviour
 {
     private Rigidbody2D rb2;
-    public float speed;
     private Transform player;
     public float lineOfSite;
     public float shootingRange;
@@ -34,11 +33,7 @@ public class TurretScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 270));
 
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-        if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
-        }
-        else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
+        if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
         {
             Instantiate(enemyBullet, enemyBulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + fireRate;
