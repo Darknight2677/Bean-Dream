@@ -102,6 +102,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("Actual Level 2");
         }
+        if(Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
     private void Movement()
