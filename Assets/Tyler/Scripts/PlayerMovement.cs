@@ -136,9 +136,9 @@ public class PlayerMovement : MonoBehaviour
     private void RaySetup()
     {
         //Ground Check/Standard Jump Ray Setup
-        RayPositionCenter = transform.position + new Vector3(0, RayLength * -.5f, 0);
-        RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * -.5f, 0);
-        RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * -.5f, 0);
+        RayPositionCenter = transform.position + new Vector3(0, RayLength * -.3f, 0);
+        RayPositionLeft = transform.position + new Vector3(-RayPositionOffset, RayLength * -.3f, 0);
+        RayPositionRight = transform.position + new Vector3(RayPositionOffset, RayLength * -.3f, 0);
 
         GroundHitsCenter = Physics2D.RaycastAll(RayPositionCenter, -Vector2.up, RayLength);
         GroundHitsLeft = Physics2D.RaycastAll(RayPositionLeft, -Vector2.up, RayLength);
